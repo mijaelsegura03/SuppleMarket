@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Purchase</title>
+    <link rel="stylesheet" href="./purchase.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar-container">
+        <a class="cancel-purchase" href="../catalog/catalog.html">
+            <i class="fa-solid fa-arrow-left"></i>
+            Go Back
+        </a>
+    </nav>
+    <main class="main-container">
+        <div class="purchase-container">
+            <p class="purchase-title">Your Cart</p>
+            <div class="cart-container" id="cart-container">
+            </div>
+        </div>
+        <div class="purchase-info-container">
+            <p class="purchase-title">Order Details</p>
+            <div class="purchase-total">
+                <div class="total-container">
+                    <span>Total:</span><span id="purchase-total-amount">$0</span>
+                </div>
+                <button class="make-purchase-button" id="make-purchase-button">Make Purchase</button>
+            </div>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/61c5807aca.js" crossorigin="anonymous"></script>
+    <script src="./purchase.js"></script>
+</body>
+</html>

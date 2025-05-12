@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./adminpanel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="go-back-container">
+            <a href="./userinfo.html" class="go-back">
+                <i class="fa-solid fa-arrow-left"></i>
+                Go back
+            </a>
+        </div>
+        <div class="title-container">
+            <h1>Admin Panel</h1>
+        </div>
+    </nav>
+    <main class="main-container">
+        <div class="options-container">
+            <button class="button" id="users-button">
+                Users
+            </button>
+            <button class="button" id="supplements-button">
+                Supplements
+            </button>
+        </div>
+        <div id="information-container" class="information-container">
+            <table id="main-table" class="main-table">
+
+            </table>
+            <dialog id="create-supplement-dialog">
+                <form method="dialog" id="create-supplement-dialog-form">
+                    <div class="description-container-dialog">
+                        <h1>Create Supplement</h1>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-jar"></i>
+                        <input class="form-group-input" type="text" id="create-supplement-name" placeholder="Supplement Name" maxlength="35" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <input class="form-group-input" type="text" id="create-supplement-description" placeholder="Description" maxlength="100" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <input class="form-group-input" type="number" id="create-supplement-unitaryprice" placeholder="Unitary Price" maxlength="15">
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <input class="form-group-input" type="number" id="create-supplement-unitarycost" placeholder="Unitary Cost" maxlength="15">
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-image"></i>
+                        <input class="form-group-input" type="file" id="create-supplement-image" accept="image/png, image/jpeg" required>
+                    </div>
+                    <div class="dialog-buttons-container">
+                        <button class="button" type="submit">Confirm</button>
+                        <button class="button" type="button" id="create-supplement-dialog-button-cancel">Cancel</button>
+                    </div>
+                </form>
+            </dialog>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/61c5807aca.js" crossorigin="anonymous"></script>
+    <script src="./adminpanel.js" type="text/javascript"></script>
+</body>
+</html> 

@@ -1,0 +1,123 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    font-weight: 600;
+    height: 90px;
+    min-height: 90px;
+    width: 100%;
+    background-color: #D5BDAF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+}
+
+.nav-navigation {
+    width: 85%;
+    height: 100%;
+    gap: 30px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.navigation-item a {
+    text-decoration: none;
+    color: #333333;
+    transition: .5s ease;
+    font-size: 18px;
+}
+
+.navigation-item a:hover {
+    color: #EDEDE9;
+}
+
+
+body {
+    min-height: 100vh;
+}
+
+.navbar-brand {
+    height: 100%;
+    width: 100%;
+    flex: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    font-size: 25px;
+    transition: .5s ease;
+    color: #333333;
+}
+
+.navbar-brand:hover {
+    color: #EDEDE9;
+}
+
+.navbar-brand img {
+    height: 40px;
+    min-width: 20px;
+}
+
+.navigation-item:nth-child(2) a{
+    color: #EDEDE9;
+}
+
+.navigation-item:nth-child(3) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.main-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-color: #F5EBE0;
+}
+
+.about-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 100px;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+}
+
+.about-container h1 {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 680px) {
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo-container img {
+        height: 70%;
+        width: 70%;
+    }
+
+}

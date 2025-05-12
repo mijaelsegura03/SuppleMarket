@@ -1,0 +1,133 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.logo-container img {
+    width: 15vh;
+    height: 12vh;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    background-color: #ffffff;
+    height: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.login-form input {
+    margin-bottom: 1.5rem;
+}
+
+.login-form h1 {
+    font-size: 50px;
+    padding-bottom: 2rem;
+}
+
+.login-container {
+    border: 1px solid rgb(255, 255, 255);
+    width: 90%;
+    max-width: 500px;
+    min-height: 45vh;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #F5EBE0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.login-button {
+    padding: 0.8rem 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #D5BDAF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #F5EBE0;
+    color: #161616;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+.register-link {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    text-decoration: none;
+    color: black;
+    transition: .5s ease;
+}
+
+.register-link:hover {
+    font-weight: 600;
+}
+
+.arrow-icon {
+    margin-left: 1px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.login-input:hover {
+    border-bottom: 1px solid #000000;
+}
+
+.login-input:focus {
+    border-bottom: 1px solid #000000;
+}
+
+.form-group i {
+    position: absolute;
+    left: 1rem;
+    top: 30%;
+    transform: translateY(-50%);
+    color: #818181;
+    transition: color 0.3s ease;
+}
+
+.form-group:focus-within i {
+    color: #000000;
+}

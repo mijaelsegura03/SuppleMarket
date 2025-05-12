@@ -1,0 +1,240 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    background-color: #F5EBE0;
+    /* background-color: #F5F1E3; */
+    /* background-color: #f7ede259;*/
+}
+
+.navbar {
+    font-weight: 600;
+    height: 90px;
+    min-height: 90px;
+    width: 100%;
+    background-color: #D5BDAF;
+    /* background-color: #A3C9A8; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+
+.nav-navigation {
+    width: 85%;
+    height: 100%;
+    gap: 30px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.navigation-item a {
+    text-decoration: none;
+    color: #333333;
+    transition: color .5s ease;
+    font-size: 18px;
+}
+
+.navigation-item a:hover {
+    color: #EDEDE9;
+    /* color: rgb(124, 124, 124); */
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.catalog-container, .about-container {
+    background-color: white;
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 1);
+    position: relative;
+    display: block;
+}  
+
+.catalog-container img, .about-container img {
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+    transition: .5s ease; 
+    object-fit: cover;   
+}
+
+.catalog-overlay, .about-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.39);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transition: .5s ease;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.catalog-container:hover .catalog-overlay {
+    opacity: 1;
+}
+
+.about-container:hover .about-overlay {
+    opacity: 1;
+}
+
+.navbar-brand {
+    height: 100%;
+    width: 100%;
+    flex: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    font-size: 25px;
+    color: #EDEDE9;
+    transition: .5s ease;
+}
+.navbar-brand:hover {
+    color: #EDEDE9;
+}
+
+.navbar-brand img {
+    height: 40px;
+    min-width: 20px;
+}
+
+.navigation-item:nth-child(3) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider img {
+    margin: 5px auto 10px auto;
+    width: 55%;
+    display: none;
+    height: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background-color: #faf0ca;
+    object-fit: fill;
+    cursor: pointer;
+    transition: filter 0.7s ease; /* Transición suave */
+}
+
+.slider img:hover {
+    filter: brightness(0.8); /* Reduce el brillo al 90% */
+}
+
+img.displaySlide {
+    display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.slider button {
+    position: absolute; /* con el position absolute posicionamos un elemento RESPECTO DE SU CONTENEDOR PADRE*/
+    top: 50%; /* en el eje Y al 50%, osea que al medio del espacio que tome su contenedor padre*/
+    transform: translateY(-50%); /* funcion que mueve al elemento un 50% hacia arriba de su altura */
+    font-size: 2rem;
+    background-color: #D5BDAF;
+    color: #EDEDE9;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: 0.5s ease;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 20%;
+    margin-left: 2.1px;
+}
+
+.next {
+    right: 20%;
+    margin-right: 2.1px;
+}
+
+.slider button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fade { /* creamos una animacion con el nombre fade */
+    from {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.sections {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 32px;
+    padding: 10px;
+    color: #333333;
+    font-weight: 600;
+    border-bottom: solid 2px#D5BDAF;
+}
+.section-title {
+    margin-top: 10px;
+    font-size: 25px;
+    padding: 10px;
+    color: #333333;
+    font-weight: 600;
+}

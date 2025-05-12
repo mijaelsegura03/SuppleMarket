@@ -1,0 +1,300 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.navbar {
+    font-weight: 600;
+    height: 90px;
+    min-height: 90px;
+    width: 100%;
+    background-color: #D5BDAF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+}
+
+.nav-navigation {
+    width: 85%;
+    height: 100%;
+    gap: 30px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.navigation-item a {
+    text-decoration: none;
+    color: #333333;
+    transition: .5s ease;
+    font-size: 18px;
+}
+
+.navigation-item a:hover {
+    color: #EDEDE9;
+}
+
+.navbar-brand {
+    height: 100%;
+    width: 100%;
+    flex: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    font-size: 25px;
+    transition: .5s ease;
+}
+
+.navbar-brand:hover {
+    color: #EDEDE9;
+}
+
+.navbar-brand img {
+    height: 40px;
+    min-width: 20px;
+}
+
+.navigation-item:nth-child(3) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.navigation-item:nth-child(3) a {
+    color: #EDEDE9;
+}
+
+@media only screen and (max-width: 680px) {
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo-container img {
+        height: 70%;
+        width: 70%;
+    }
+
+}
+
+.main-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F5EBE0;
+}
+
+.userinfo-container {
+    background-color: rgb(255, 255, 255);
+    min-height: 50%;
+    min-width: 50%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin-bottom: 4rem;
+}
+
+.description-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #D5BDAF;
+}
+
+.description-container-dialog {
+    text-align: center;
+    border-bottom: 2px solid #D5BDAF;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.userinfo-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.userinfo-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.userinfo-item-title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.userinfo-item-icon {
+    font-size: 25px;
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
+.description-title {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    padding: 0.8rem 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #D5BDAF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.button:hover {
+    background-color: #F5EBE0;
+    color: #161616;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.userinfo-item-description {
+    font-size: 25px;
+    font-weight: 600;
+    padding-left: 10px;
+    color: #D5BDAF;
+}
+
+.edit-dialog-container {
+    border: 1px solid rgb(255, 255, 255);
+    width: 90%;
+    max-width: 500px;
+    min-height: 40%;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.edit-input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.edit-input:hover {
+    border-bottom: 1px solid #000000;
+}
+
+.edit-input:focus {
+    border-bottom: 1px solid #000000;
+}
+
+.edit-dialog-button {
+    padding: 0.8rem 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #D5BDAF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edit-dialog-button:hover {
+    background-color: #F5EBE0;
+    color: #161616;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-dialog-button:active {
+    transform: translateY(0);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.form-group i {
+    position: absolute;
+    left: 1rem;
+    top: 45%;
+    transform: translateY(-50%);
+    color: #818181;
+    transition: color 0.3s ease;
+}
+
+.form-group:focus-within i {
+    color: #000000;
+}
+
+.birthdate-input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.margin-0 {
+    margin-top: 0;
+}
+
+.delete-dialog-container {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-width: 40%;
+    min-height: 20%;
+    border: none;
+    border-radius: 10px;
+}
