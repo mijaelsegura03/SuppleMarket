@@ -27,7 +27,7 @@ public class Supplement {
     private String imageName;
     @Column(name = "image_type")
     private String imageType;
-    @Column(name = "image_data")
+    @Column(name = "image_data", columnDefinition="LONGBLOB")
     @Lob
     private byte[] imageData;
 

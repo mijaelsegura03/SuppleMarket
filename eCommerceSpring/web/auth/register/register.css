@@ -23,7 +23,7 @@ body {
     border-radius: 10px;
 }
 
-.register-form input {
+.margin-input {
     margin-bottom: 1.5rem;
 }
 
@@ -140,4 +140,24 @@ body {
     height: 100%;
 }
 
+.role-selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
 
+.role-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #D5BDAF; /* Cambia el color del checkbox */
+    transition: transform 0.2s ease;
+}
+
+.role-checkbox:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}

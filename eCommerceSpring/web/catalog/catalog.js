@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!jwt) {
         window.location.href = '../auth/login/login.html';
     }
+        
     const supplements = showSupplements(jwt)
     findOrCreateCart(jwt, supplements)
 })
@@ -173,13 +174,16 @@ async function findOrCreateCart(jwt, supplementsPromise) {
 }
 
 async function postCart(dni) {
-    const jwt = sessionStorage.getItem('acess_token')
+    const jwt = sessionStorage.getItem('access_token')
+
     const response = await fetch(`${CART_URL}`, {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${jwt}`
+            "Authorization": `Bearer ${jwt}`,
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(dni)
+        
     })
 
     if (!response.ok) {

@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./home.css">
     <title>Inicio</title>
 </head>
@@ -18,14 +19,20 @@
         </a>
         <ul class="nav-navigation">
                 <li class="navigation-item">
-                    <a href="../catalog/catalog.html">Catalog</a>
+                    <a class="nav-link"  href="../catalog/catalog.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Catalog
+                    </a>
                 </li>
                 <li class="navigation-item">
-                    <a href="../about/about.html">About</a>
+                    <a class="nav-link" href="../about/about.html">
+                        <i class="fa-solid fa-address-card"></i>
+                        About
+                    </a>
                 </li>
                 <li class="navigation-item">
                     <div class="user-info">
-                        <a class="user-link" href="../user/userinfo.html">
+                        <a class="user-link nav-link" href="../user/userinfo.html">
                           <i class="fa-solid fa-user"></i>
                         </a>
                     </div>
@@ -45,18 +52,61 @@
             <button class="next" onclick="nextSlide()">&#10095</button>
         </div>
         <h1 class="page-title">WELCOME TO THE BEST SUPPLEMENT STORE IN ARGENTINA</h1>
-        <h1 class="section-title">EXPLORE OUR SECTIONS</h1>
-        <div class="sections">
-            <a href="../catalog/catalog.html" class="catalog-container">
-                <div class="catalog-overlay">Catalog</div>
-                <img src="../assets/slider/catalog2.jpg" alt="Go to catalog">
-            </a>
-            <a href="../about/about.html" class="about-container">
-                <div class="about-overlay">About</div>
-                <img src="../assets/slider/about2.jpg" alt="Go to about">
-            </a>
+        <h1 class="section-title">OUR FEATURED PRODUCTS</h1>
+        <div class="featured-products">
+            <div id="product-card1" class="product-card">
+                <img class="product-card-image" src="../assets/supplements/enaprotein1kg.png" alt="Product #1">
+                <div class="product-card-info">
+                    <p class="product-card-name">ENA Protein</p>
+                    <p class="product-card-description">High-quality protein supplement</p>
+                </div>
+            </div>
+            <div id="product-card2" class="product-card">
+                <img class="product-card-image" src="../assets/supplements/starcreatine300g.png" alt="Product #1">
+                <div class="product-card-info">
+                    <p class="product-card-name">STAR Creatine</p>
+                    <p class="product-card-description">Creatine monohydrate 100% pure</p>
+                </div>
+            </div>
+            <div id="product-card3" class="product-card">
+                <img class="product-card-image" src="../assets/supplements/pumpv8home.png" alt="Product #1">
+                <div class="product-card-info">
+                    <p class="product-card-name">STAR Pump V8</p>
+                    <p class="product-card-description">For better training and mental performance</p>
+                </div>
+            </div>
+            <div id="product-card4" class="product-card">
+                <img class="product-card-image" src="../assets/supplements/enabcaa.png" alt="Product #1">
+                <div class="product-card-info">
+                    <p class="product-card-name">ENA BCAA</p>
+                    <p class="product-card-description">Faster muscle recovery and growth </p>
+                </div>
+            </div>
         </div>
     </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <p>SuppleMarket</p>
+            </div>
+            <div class="subscribe">
+                <p>Subscribe for promotions</p>
+                <div>
+                    <input type="email" placeholder="example@gmail.com">
+                    <button class="subscribe-button">SUBSCRIBE</button>
+                </div>
+            </div>
+            <div class="social-media">
+                <p>Follow us on:</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="rights">&copy; 2025 SuppleMarket. All rights reserved.</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/61c5807aca.js" crossorigin="anonymous"></script>
     <script src="./home.js"></script>

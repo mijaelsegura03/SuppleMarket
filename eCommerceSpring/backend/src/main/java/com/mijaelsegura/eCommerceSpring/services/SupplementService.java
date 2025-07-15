@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -53,13 +54,14 @@ public class SupplementService implements ISupplementService {
     public ResultSupplementList GetAllSupplements() {
         ResultSupplementList res = new ResultSupplementList();
         List<Supplement> supplements = supplementRepository.findAll();
-        if (supplements.isEmpty()) {
-            throw new ResourceNotFoundException("Not found any supplements");
-        }
         res.setMessage("");
         res.setSuccess(true);
-        res.setSupplements(supplements.stream().map(supplement -> new SupplementDto(supplement.getId(),supplement.getName(), supplement.getDescription(), supplement.getUnitaryPrice(), supplement.getUnitaryCost())).toList());
         res.setTypeError("");
+        if (supplements.isEmpty()) {
+            res.setSupplements(new ArrayList<>());
+            return res;
+        }
+        res.setSupplements(supplements.stream().map(supplement -> new SupplementDto(supplement.getId(),supplement.getName(), supplement.getDescription(), supplement.getUnitaryPrice(), supplement.getUnitaryCost())).toList());
         return res;
     }
 

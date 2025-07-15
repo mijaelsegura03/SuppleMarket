@@ -1,0 +1,45 @@
+services:
+  db:
+    image: mysql:8
+    container_name: ecommerce_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ecommerce
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - ecommerce_network
+
+  backend:
+    build: ./backend
+    container_name: ecommerce_backend
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ecommerce
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: pass
+    ports:
+      - "8080:8080"
+    networks:
+      - ecommerce_network
+
+  web:
+    build: ./web
+    container_name: ecommerce_frontend
+    ports:
+      - "3000:80" # Cambia el puerto 3000 si usás otro para desarrollo
+    depends_on:
+      - backend
+    networks:
+      - ecommerce_network
+
+volumes:
+  db_data:
+
+networks:
+  ecommerce_network:

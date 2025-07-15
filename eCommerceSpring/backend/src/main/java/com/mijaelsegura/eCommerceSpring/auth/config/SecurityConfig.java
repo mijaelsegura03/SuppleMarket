@@ -53,7 +53,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://127.0.0.1:5501")); //puerto del live server
+        config.setAllowedOrigins(List.of("http://127.0.0.1:5500/", "http://localhost:3000")); //puerto del live server
         config.setAllowedMethods(Arrays.asList("POST","GET","PUT","PATCH","DELETE"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         config.setAllowCredentials(true);

@@ -1,4 +1,6 @@
 const REGISTER_URL = "http://localhost:8080/auth/register"
+const REGISTER_ADMIN_URL = "http://localhost:8080/auth/register/admin"
+
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("register-form").addEventListener("submit", (event) => {
         event.preventDefault()
@@ -17,12 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
             username,
             password
         }
-        register(userBody)
+        const checkbox = document.getElementById("user-role")
+        const role = checkbox.checked ? "admin" : "user"
+
+        register(userBody, role)
     })
 })
 
-async function register(body) {
-    const response = await fetch(REGISTER_URL, {
+async function register(body, role) {
+    const response = await fetch(role == 'admin'? REGISTER_ADMIN_URL : REGISTER_URL, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(body)
@@ -35,7 +40,7 @@ async function register(body) {
     const data = await response.json()
     const token = data.access_token
     sessionStorage.setItem("access_token", token)
-    window.location.href = "../../../home/home.html"
+    window.location.href = "../../home/home.html"
 }
 
 function showAlert(text) {

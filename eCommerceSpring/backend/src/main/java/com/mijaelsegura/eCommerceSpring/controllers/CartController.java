@@ -19,8 +19,8 @@ public class CartController {
     }
 
     @PostMapping
-    public ResponseEntity<CartDto> PostCart(@RequestBody Map<String, Long> userInfo) {
-        CartDto cartDto  = cartService.CreateCart(userInfo.get("dni"));
+    public ResponseEntity<CartDto> PostCart(@RequestBody Long userDni) {
+        CartDto cartDto  = cartService.CreateCart(userDni);
         return new ResponseEntity<>(cartDto, HttpStatus.OK);
     }
 
