@@ -1,3 +1,4 @@
+import { showAlert } from "../../utils/alert.js";
 const LOGIN_URL = "http://localhost:8080/auth/login";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,17 +21,13 @@ async function login(body) {
         body: JSON.stringify(body),
         headers: {"Content-Type": "application/json"}
     })
-    if (response.status == 400) {
+    if (response.status == 400 || response.status == 404) {
         const error = await response.text()
-        showAlert(error)
+        showAlert(error, 'warning')
         return
     }
     const data = await response.json()
     const token = data.access_token
     sessionStorage.setItem("access_token", token);
     history.back()
-}
-
-function showAlert(text) {
-    alert(text)
 }

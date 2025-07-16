@@ -17,6 +17,16 @@ body {
     height: 12vh;
 }
 
+.login-container {
+    border: 1px solid rgb(255, 255, 255);
+    width: 90%;
+    max-width: 500px;
+    min-height: 430px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;
@@ -35,16 +45,6 @@ body {
 .login-form h1 {
     font-size: 50px;
     padding-bottom: 2rem;
-}
-
-.login-container {
-    border: 1px solid rgb(255, 255, 255);
-    width: 90%;
-    max-width: 500px;
-    min-height: 45vh;
-    position: relative;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
 }
 
 .main-container {
@@ -131,3 +131,4 @@ body {
 .form-group:focus-within i {
     color: #000000;
 }
+

@@ -66,6 +66,7 @@ body {
     font-size: 25px;
     transition: .5s ease;
     color: #333333;
+    text-decoration: none;
 }
 
 .navbar-brand:hover {
@@ -120,4 +121,8 @@ body {
         width: 70%;
     }
 
+}
+
+.stack-item {
+    margin-bottom: 5px;
 }

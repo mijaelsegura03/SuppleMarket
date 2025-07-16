@@ -1,3 +1,4 @@
+import {showAlert} from "../../utils/alert.js"
 const REGISTER_URL = "http://localhost:8080/auth/register"
 const REGISTER_ADMIN_URL = "http://localhost:8080/auth/register/admin"
 
@@ -34,16 +35,12 @@ async function register(body, role) {
     })
     if (response.status == 400) {
         const error = await response.text()
-        showAlert(error)
+        showAlert(error, 'warning')
         return
     }
     const data = await response.json()
     const token = data.access_token
     sessionStorage.setItem("access_token", token)
     window.location.href = "../../home/home.html"
-}
-
-function showAlert(text) {
-    alert(text)
 }
 

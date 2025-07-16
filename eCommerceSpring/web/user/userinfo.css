@@ -4,8 +4,11 @@ html, body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -64,6 +67,8 @@ body {
     margin-left: 10px;
     font-size: 25px;
     transition: .5s ease;
+    text-decoration: none;
+    color: #333333;
 }
 
 .navbar-brand:hover {
@@ -135,6 +140,10 @@ body {
     margin-bottom: 2rem;
 }
 
+.description-container-dialog h1 {
+    font-weight: 500;
+}
+
 .userinfo-items {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -144,6 +153,7 @@ body {
 .userinfo-item {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .userinfo-item-title {
@@ -154,7 +164,6 @@ body {
 .userinfo-item-icon {
     font-size: 25px;
     margin-right: 10px;
-    margin-top: 4px;
 }
 
 .description-title {
@@ -212,7 +221,7 @@ body {
 }
 
 .edit-input {
-    width: 100%;
+    width: 90%;
     padding: 0.5rem 1rem 0.5rem 2.5rem;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -293,8 +302,8 @@ body {
 .delete-dialog-container {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    max-width: 40%;
-    min-height: 20%;
+    max-width: 30%;
+    min-height: 15%;
     border: none;
     border-radius: 10px;
 }

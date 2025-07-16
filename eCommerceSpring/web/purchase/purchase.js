@@ -1,3 +1,5 @@
+import { showAlert } from '../utils/alert.js';
+
 const CART_URL = "http://localhost:8080/cart"
 const SUPPLEMENTS_URL = "http://localhost:8080/supplements"
 const PURCHASE_URL = "http://localhost:8080/purchases"
@@ -20,7 +22,7 @@ async function findCart(jwt) {
     })
 
     if (!response.ok) {
-        alert("Error fetching cart.")
+        showAlert("Error fetching cart.", "warning")
     }
 
     const data = await response.json()
@@ -124,10 +126,12 @@ async function postPurchase() {
         body: JSON.stringify(purchaseBody)
     })
     if (!response.ok) {
-        alert("Failed to make purchase. Try again")
+        showAlert("Failed to make purchase. Try again", "warning")
     } else {
-        alert("Purchase made successfully!")
-        window.location.href = '../home/home.html'
+        showAlert("Purchase made successfully! Redirecting in 3s...", "confirmation")
+        setTimeout(() => {
+            window.location.href = '../home/home.html'
+        }, 3000);
     } 
 }
 

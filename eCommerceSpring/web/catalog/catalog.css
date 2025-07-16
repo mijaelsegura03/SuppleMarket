@@ -4,11 +4,13 @@ html, body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
     background-color: #F5EBE0;
 }
 
+* {
+    font-family: "Montserrat", sans-serif;
+}
 
 body {
     min-height: 100vh;
@@ -65,6 +67,8 @@ body {
     font-size: 1.2rem;
     margin-left: 10px;
     font-size: 25px;
+    text-decoration: none;
+    color: #333333;
 }
 
 
@@ -99,7 +103,7 @@ body {
 }
 
 .main-container {
-    height: 100%;
+    height: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,8 +114,8 @@ body {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, .3fr);
+    grid-template-rows: repeat(5, .3fr);
     row-gap: 20px;
     column-gap: 5px;
     justify-items: center;
@@ -127,7 +131,7 @@ grid-column-start comienza en 2 y va hasta 4, luego las filas se incrementan 1.
     align-items: center;
     background: #FFFFFF;
     width: 300px;
-    height: 400px;
+    height: 450px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
     align-self: center;
@@ -174,6 +178,7 @@ grid-column-start comienza en 2 y va hasta 4, luego las filas se incrementan 1.
     padding-left: 20px;
     padding-right: 20px;
     transition: 0.5s ease;
+    cursor: pointer;
 }
 
 .supplement-card-button:hover {
@@ -210,13 +215,13 @@ grid-column-start comienza en 2 y va hasta 4, luego las filas se incrementan 1.
 }
 
 .cart-button {
+    position: relative; /*Position relative al padre de red-circle para luego poder alinearlo dentro sin que se salga y sea responsive*/
     border: none;
     border-radius: 5px;
     background-color: #FFFFFF;
     color: #4b4a4a;
-    margin-right: 15px;
     font-size: 24px;
-    padding: 5px;
+    cursor: pointer;
 }
 
 .cart-button i {
@@ -231,7 +236,7 @@ grid-column-start comienza en 2 y va hasta 4, luego las filas se incrementan 1.
     border-radius: 15px;
     background-color: #FFFFFF;
     margin-top: 200px;
-    padding: 10px;
+    padding: 20px;
     width: 600px;
     display: flex;
     flex-direction: column;
@@ -243,10 +248,13 @@ grid-column-start comienza en 2 y va hasta 4, luego las filas se incrementan 1.
 .catalog-title-container p {
     font-size: 50px;
     font-weight: 700;
+    margin: 15px;
 }
 
 .red-circle {
     background-color: red;
+    bottom: -5px;
+    right: -5px;
     font-size: 16px;
     border-radius: 50%;
     display: flex;
@@ -255,9 +263,8 @@ grid-column-start comienza en 2 y va hasta 4, luego las filas se incrementan 1.
     color: #FFFFFF;
     width: 30px;
     height: 30px;
-    position: absolute;
-    top: 23%;
-    right: 48%;
+    position: absolute; /*Lo alineamos DENTRO del div del botón sin problemas ya que el padre tiene position relative*/
+    z-index: 2;
 }
 
 .cart-container {
@@ -375,7 +382,6 @@ grid-column-start comienza en 2 y va hasta 4, luego las filas se incrementan 1.
     color: #EDEDE9;
     border-radius: 5px;
     border: none;
-    margin: 10px;
     font-weight: 500;
     transition: 0.5s ease;
     padding: 10px;
@@ -390,13 +396,14 @@ grid-column-start comienza en 2 y va hasta 4, luego las filas se incrementan 1.
 .cart-saved-dialog[open] {
     border: solid 1px #D5BDAF;
     border-radius: 5px;
-    padding: 25px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
 
-.cart-saved-dialog h1 {
-    border-bottom: solid 2px #D5BDAF;
+.cart-saved-dialog::backdrop {
+    background: rgba(34, 34, 34, 0.5); 
 }
+

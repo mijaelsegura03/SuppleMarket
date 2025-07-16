@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const jwt = sessionStorage.getItem('access_token');
     if (!jwt) {
         window.location.href = '../auth/login/login.html';
+        return
     }
 
     getData(jwt)

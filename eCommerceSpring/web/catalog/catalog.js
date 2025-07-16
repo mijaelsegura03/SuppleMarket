@@ -1,3 +1,5 @@
+import { showAlert } from '../utils/alert.js'
+
 const SUPPLEMENTS_URL = "http://localhost:8080/supplements"
 const CART_URL = "http://localhost:8080/cart"
 let cart = []
@@ -8,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const jwt = sessionStorage.getItem('access_token');
     if (!jwt) {
         window.location.href = '../auth/login/login.html';
+        return
     }
         
     const supplements = showSupplements(jwt)
@@ -323,6 +326,10 @@ function saveCart() {
 
 const savedCartModal = document.getElementById('cart-saved-dialog')
 saveCartButton.addEventListener('click', () => {
+    if (cart.length == 0) {
+        showAlert('Your cart is empty.', 'warning')
+        return
+    }
     saveCart()
     savedCartModal.showModal()
 })
@@ -356,6 +363,10 @@ function modifyProductsOnCartNumber(quantity, type) {
 }
 
 document.getElementById('confirm-purchase-button').addEventListener('click', () => {
+    if (cart.length == 0) {
+        showAlert('Your cart is empty.', 'warning')
+        return
+    }
     saveCart()
     window.location = '../purchase/purchase.html'
 })
