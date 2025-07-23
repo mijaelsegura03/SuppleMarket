@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./userpurchases.css">
+    <title>Purchases</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="../home/home.html">
+            <img src="../assets/minilogo6.png" alt="Logo de SuppleMarket">
+            SuppleMarket
+        </a>
+        <ul class="nav-navigation">
+                <li class="navigation-item">
+                    <a class="nav-link"  href="../catalog/catalog.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Catalog
+                    </a>
+                </li>
+                <li class="navigation-item">
+                    <a class="nav-link" href="../about/about.html">
+                        <i class="fa-solid fa-address-card"></i>
+                        About
+                    </a>
+                </li>
+                <li class="navigation-item">
+                    <div class="user-info">
+                        <a class="user-link nav-link" href="../user/userinfo.html">
+                          <i class="fa-solid fa-user"></i>
+                        </a>
+                        <a href="#" class="dropdown-arrow">▾</a>
+                        <ul class="dropdown" id="user-dropdown">
+                            <li><a href="../auth/login/login.html" class="dropdown-item"><p>Login</p></a></li>
+                            <li><a href="../auth/register/register.html" class="dropdown-item"><p>Register</p></a></li>
+                        </ul>
+                    </div>
+                </li>
+        </ul>
+    </nav>
+    <main class="main-container">
+        <h1 class="page-title">Your purchases</h1>
+        <div class="purchases-container" id="purchases-container">
+            <div class="accordion" id="purchases-accordion">
+            </div>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/61c5807aca.js" crossorigin="anonymous"></script>
+    <script src="./userpurchases.js" type="module"></script>
+</body>
+</html>

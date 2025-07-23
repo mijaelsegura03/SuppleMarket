@@ -1,3 +1,4 @@
+import { extractRole } from "../utils/jwt/extractRole.js";
 const USERS_URL = "http://localhost:8080/users";
 const SUPPLEMENTS_URL = "http://localhost:8080/supplements";
 
@@ -329,17 +330,7 @@ async function createMethod(jwt, body, URL) {
     }
 }
 
-function extractRole(jwt) {
-    try {
-        const base64Url = jwt.split(".")[1]; // Extrae el payload
-        const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/"); // Convierte a Base64 estándar
-        const jsonString = atob(base64); // Decodifica Base64 a texto plano
-  
-        const payload = JSON.parse(jsonString)
-        return payload.ROLE || null
-      } catch (error) {
-        console.error("Error extracting attribute:", error);
-        return null;
-      }
-}
-
+document.getElementById('go-back-link').addEventListener('click', (event) => {
+    event.preventDefault();
+    window.history.back();
+});

@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./catalog.css">
-    <link rel="stylesheet" href="../utils/alert.css">
+    <link rel="stylesheet" href="../utils/alerts/alert.css">
     <title>Catalog</title>
 </head>
 <body>
@@ -18,16 +18,27 @@
       </a>
       <ul class="nav-navigation">
               <li class="navigation-item">
-                  <a href="../catalog/catalog.html">Catalog</a>
+                  <a class="nav-link" href="../catalog/catalog.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Catalog
+                  </a>
               </li>
               <li class="navigation-item">
-                  <a href="../about/about.html">About</a>
+                  <a class="nav-link" href="../about/about.html">
+                    <i class="fa-solid fa-address-card"></i>
+                    About
+                  </a>
               </li>
               <li class="navigation-item">
                   <div class="user-info">
-                      <a class="user-link" href="../user/userinfo.html">
+                      <a class="user-link nav-link" href="../user/userinfo.html">
                         <i class="fa-solid fa-user"></i>
                       </a>
+                      <a href="#" class="dropdown-arrow">▾</a>
+                      <ul class="dropdown" id="user-dropdown">
+                          <li><a href="#" class="dropdown-item">Profile</a></li>
+                          <li><a href="#" class="dropdown-item">Purchases</a></li>
+                      </ul>
                   </div>
               </li>
       </ul>

@@ -42,4 +42,10 @@ public class PurchaseController {
         ResultPurchase res = purchaseService.DeletePurchase(id);
         return new ResponseEntity<>(res, HttpStatus.OK);
     }
+
+    @GetMapping("/dni/{dni}")
+    public ResponseEntity<ResultPurchaseList> GetPurchasesByDni(@PathVariable long dni) {
+        ResultPurchaseList res = purchaseService.GetPurchasesByDni(dni);
+        return new ResponseEntity<>(res, HttpStatus.OK);
+    }
 }

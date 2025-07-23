@@ -1,5 +1,6 @@
 package com.mijaelsegura.eCommerceSpring.services;
 
+import com.mijaelsegura.eCommerceSpring.dto.Result;
 import com.mijaelsegura.eCommerceSpring.dto.purchase.PurchaseDetailDto;
 import com.mijaelsegura.eCommerceSpring.dto.purchase.PurchaseDto;
 import com.mijaelsegura.eCommerceSpring.dto.purchase.ResultPurchase;
@@ -117,4 +118,28 @@ public class PurchaseService implements IPurchaseService {
         purchaseRepository.delete(purchase);
         return resultGenerator.getSuccessResult(new PurchaseDto(purchase.getId(), purchase.getTotalPrice(), purchase.getPurchaseDate(), purchase.getUser().getDNI()));
     }
+
+    @Override
+    public ResultPurchaseList GetPurchasesByDni(long dni) {
+        ResultPurchaseList res = new ResultPurchaseList();
+        List<Purchase> resultList = purchaseRepository.findPurchasesByDni(dni);
+        if (resultList.isEmpty()) {
+            throw new ResourceNotFoundException("You didn't make any purchases yet");
+        }
+        List<PurchaseDto> purchasesResult = new ArrayList<>();
+        for (Purchase purchase : resultList) {
+            List<PurchaseDetail> purchaseDetails = purchase.getPurchaseDetails();
+            PurchaseDto purchaseDto = new PurchaseDto(purchase.getId(), purchase.getTotalPrice(), purchase.getPurchaseDate(), purchase.getUser().getDNI());
+            purchaseDto.setPurchaseDetails(purchaseDetails.stream().map(detail -> new PurchaseDetailDto(detail.getId().getPurchaseId(), detail.getId().getSupplementId(), detail.getQuantity())).toList());
+            purchasesResult.add(purchaseDto);
+        }
+
+        res.setSuccess(true);
+        res.setTypeError("");
+        res.setMessage("");
+        res.setPurchases(purchasesResult);
+        return res;
+    }
+
+
 }

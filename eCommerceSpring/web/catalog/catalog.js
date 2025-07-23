@@ -1,4 +1,6 @@
-import { showAlert } from '../utils/alert.js'
+import { showAlert } from '../utils/alerts/alert.js';
+import { extractDni } from '../utils/jwt/extractDni.js';
+import { renderUserDropdown } from "../utils/dropdowns/userdropdown.js";
 
 const SUPPLEMENTS_URL = "http://localhost:8080/supplements"
 const CART_URL = "http://localhost:8080/cart"
@@ -12,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '../auth/login/login.html';
         return
     }
-        
+    
+    renderUserDropdown();
     const supplements = showSupplements(jwt)
     findOrCreateCart(jwt, supplements)
 })
@@ -223,21 +226,6 @@ function addItemsToCart() {
         }
     })
     modifyProductsOnCartNumber(totalQuantity, 'total')
-}
-
-
-function extractDni(jwt) {
-    try {
-        const base64Url = jwt.split(".")[1]; // Extrae el payload
-        const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/"); // Convierte a Base64 estándar
-        const jsonString = atob(base64); // Decodifica Base64 a texto plano
-  
-        const payload = JSON.parse(jsonString)
-        return payload.sub || null
-    } catch (error) {
-        console.error("Error extracting attribute:", error);
-        return null;
-    }
 }
 
 async function postCartItem(cartBody) {

@@ -1,9 +1,12 @@
+import { renderUserDropdown } from "../utils/dropdowns/userdropdown.js";
+
 const slides = document.querySelectorAll(".slides img");
 let slideIndex = 0;
 let intervalId = null;
 
 document.addEventListener('DOMContentLoaded', () => {
    initializeSlider();
+   renderUserDropdown();
 }) 
 
 
@@ -37,3 +40,8 @@ function nextSlide() {
    slideIndex++
    showSlide(slideIndex)
 }
+
+document.getElementById('prev-button').addEventListener('click', prevSlide);
+document.getElementById('next-button').addEventListener('click', nextSlide);
+
+

@@ -5,6 +5,12 @@ public class PurchaseDetailDto {
     private long supplementId;
     private int quantity;
 
+    public PurchaseDetailDto(long purchaseId, long supplementId, int quantity) {
+        this.purchaseId = purchaseId;
+        this.supplementId = supplementId;
+        this.quantity = quantity;
+    }
+
     public long getPurchaseId() {
         return purchaseId;
     }

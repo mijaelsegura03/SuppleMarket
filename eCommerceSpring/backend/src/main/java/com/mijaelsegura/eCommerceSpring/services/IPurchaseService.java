@@ -9,4 +9,5 @@ public interface IPurchaseService {
     ResultPurchaseList GetAllPurchases();
     ResultPurchase PostPurchase(PurchaseDto purchaseDto);
     ResultPurchase DeletePurchase(long id);
+    ResultPurchaseList GetPurchasesByDni(long dni);
 }

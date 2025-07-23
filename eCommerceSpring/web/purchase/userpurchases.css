@@ -6,6 +6,9 @@ html, body {
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
+    background-color: #F5EBE0;
+    /* background-color: #F5F1E3; */
+    /* background-color: #f7ede259;*/
 }
 
 .navbar {
@@ -19,7 +22,6 @@ html, body {
     justify-content: center; 
     align-items: center;
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
-    z-index: 2;
 }
 
 .nav-link {
@@ -51,22 +53,22 @@ html, body {
     margin-left: 40px;
 }
 
-.navigation-item a {
-    text-decoration: none;
-    color: #333333;
-    transition: .5s ease;
-    font-size: 18px;
-}
 
 .nav-link:hover {
     color: #EDEDE9;
 }
 
-
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .navbar-brand {
@@ -81,10 +83,10 @@ body {
     font-size: 1.2rem;
     margin-left: 10px;
     font-size: 25px;
-    transition: color .5s ease;
     color: #333333;
-    text-decoration: none;
+    transition: color .5s ease;
     font-weight: 700;
+    text-decoration: none;
 }
 
 .navbar-brand:hover {
@@ -96,50 +98,9 @@ body {
     min-width: 20px;
 }
 
-.navigation-item:nth-child(2) a{
-    color: #EDEDE9;
-}
-
 .navigation-item:last-child {
     margin-left: auto;
     margin-right: 10px;
-}
-
-.main-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    background-color: #F5EBE0;
-}
-
-.about-container {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 100px;
-    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
-}
-
-.about-container h1 {
-    text-decoration: underline;
-}
-
-@media only screen and (max-width: 680px) {
-    .logo-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .logo-container img {
-        height: 70%;
-        width: 70%;
-    }
-
-}
-
-.stack-item {
-    margin-bottom: 5px;
 }
 
 .dropdown {
@@ -194,6 +155,89 @@ ul li:hover ul.dropdown {
     color: #333333;
 }
 
+
 .dropdown-item p {
     margin: 0;
+}
+
+.purchases-container {
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 80%; 
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.accordion {
+    width: 90%;
+}
+
+.accordion-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.accordion-header {
+    background-color: #D5BDAF;
+    padding: 10px;
+    cursor: pointer;
+    color: #333333;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.accordion-header i {
+    margin-left: auto;
+}
+.accordion-header p {
+    margin: 0;
+}
+
+.accordion-content {
+    display: none;
+    max-height: 0;
+    transition: max-height 0.6s ease;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #333333;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.accordion-content.active {
+    display: flex;
+    max-height: 1000px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.purchase-total {
+    font-weight: 600;
+    margin: 0;
+    font-size: 26px;
+}
+
+.purchase-details p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.purchase-details ul {
+    padding: 0;
+    margin: 0;
+}
+
+.page-title {
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: 500;
 }

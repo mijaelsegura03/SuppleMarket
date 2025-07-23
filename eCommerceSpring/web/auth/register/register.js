@@ -1,4 +1,4 @@
-import {showAlert} from "../../utils/alert.js"
+import {showAlert} from "../../utils/alerts/alert.js"
 const REGISTER_URL = "http://localhost:8080/auth/register"
 const REGISTER_ADMIN_URL = "http://localhost:8080/auth/register/admin"
 

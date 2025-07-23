@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./home.css">
-    <title>Inicio</title>
+    <title>Home</title>
 </head>
 <body>
     <nav class="navbar">
@@ -34,8 +34,14 @@
                         <a class="user-link nav-link" href="../user/userinfo.html">
                           <i class="fa-solid fa-user"></i>
                         </a>
+                        <a href="#" class="dropdown-arrow">▾</a>
+                        <ul class="dropdown" id="user-dropdown">
+                            <li><a href="../auth/login/login.html" class="dropdown-item"><p>Login</p></a></li>
+                            <li><a href="../auth/register/register.html" class="dropdown-item"><p>Register</p></a></li>
+                        </ul>
                     </div>
                 </li>
+
         </ul>
     </nav>
     <main class="main-container">
@@ -45,8 +51,8 @@
                     <img src="../assets/slider/imagen9.jpg" onclick="window.location.href='../catalog/catalog.html'" alt="Image #2">
                     <img src="../assets/slider/imagen7.png" onclick="window.location.href='../catalog/catalog.html'" alt="Image #3">
             </div>
-            <button class="prev" onclick="prevSlide()">&#10094</button>
-            <button class="next" onclick="nextSlide()">&#10095</button>
+            <button class="prev" id="prev-button">&#10094</button>
+            <button class="next" id="next-button">&#10095</button>
         </div>
         <h1 class="page-title">WELCOME TO THE BEST SUPPLEMENT STORE IN ARGENTINA</h1>
         <h1 class="section-title">OUR FEATURED PRODUCTS</h1>
@@ -105,6 +111,6 @@
         <p class="rights">&copy; 2025 SuppleMarket. All rights reserved.</p>
     </footer>
     <script src="https://kit.fontawesome.com/61c5807aca.js" crossorigin="anonymous"></script>
-    <script src="./home.js"></script>
+    <script src="./home.js" type="module"></script>
 </body>
 </html>

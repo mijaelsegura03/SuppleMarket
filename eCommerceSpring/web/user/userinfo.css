@@ -28,6 +28,16 @@ body {
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
 }
 
+.nav-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+    transition: color .5s ease;
+    font-size: 18px;
+}
+
 .nav-navigation {
     width: 85%;
     height: 100%;
@@ -40,7 +50,11 @@ body {
     margin: 0;
     padding: 0;
     flex: 1;
-    margin-left: 20px;
+    margin-left: 40px;
+}
+
+.nav-link i {
+    margin-right: 8px;
 }
 
 .navigation-item a {
@@ -50,7 +64,7 @@ body {
     font-size: 18px;
 }
 
-.navigation-item a:hover {
+.nav-link:hover {
     color: #EDEDE9;
 }
 
@@ -80,16 +94,9 @@ body {
     min-width: 20px;
 }
 
-.navigation-item:nth-child(3) {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+.navigation-item:last-child {
+    margin-left: auto;
     margin-right: 10px;
-}
-
-.navigation-item:nth-child(3) a {
-    color: #EDEDE9;
 }
 
 @media only screen and (max-width: 680px) {
@@ -178,7 +185,7 @@ body {
 }
 
 .button {
-    padding: 0.8rem 3rem;
+    padding: 10px 15px;
     font-size: 1rem;
     font-weight: 600;
     color: white;
@@ -187,9 +194,13 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-right: 0.5rem;
     margin-left: 0.5rem;
+}
+
+.margin-right i {
+    margin-right: 5px;
 }
 
 .button:hover {
@@ -306,4 +317,61 @@ body {
     min-height: 15%;
     border: none;
     border-radius: 10px;
+}
+
+.dropdown {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown li {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 20px 25px;
+    color: #333333;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown {
+    width: 150px;
+    background: whitesmoke;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    right: 0;
+    left: auto;
+}
+
+.dropdown li a:hover {
+    background: #EDEDE9;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+.user-info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown-arrow {
+    text-decoration: none;
+    color: #333333;
+}
+
+
+.dropdown-item p {
+    margin: 0;
 }

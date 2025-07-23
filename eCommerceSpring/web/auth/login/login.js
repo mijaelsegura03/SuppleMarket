@@ -1,4 +1,4 @@
-import { showAlert } from "../../utils/alert.js";
+import { showAlert } from "../../utils/alerts/alert.js";
 const LOGIN_URL = "http://localhost:8080/auth/login";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,5 +29,12 @@ async function login(body) {
     const data = await response.json()
     const token = data.access_token
     sessionStorage.setItem("access_token", token);
-    history.back()
+    console.log(document.referrer)
+    let prevUrl = document.referrer
+    let prevUrlHtml = prevUrl.split("/").pop()
+    if (prevUrlHtml === "login.html" || prevUrlHtml === "register.html") {
+        document.location.href = "../../home/home.html";
+    } else {
+        history.back()
+    }
 }

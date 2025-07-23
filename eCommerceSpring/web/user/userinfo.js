@@ -1,3 +1,6 @@
+import { extractDni } from '../utils/jwt/extractDni.js';
+import { renderUserDropdown } from "../utils/dropdowns/userdropdown.js";
+
 const USER_URL = "http://localhost:8080/users"
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -6,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '../auth/login/login.html';
         return
     }
-
+    renderUserDropdown();
     getData(jwt)
 })
 
@@ -37,47 +40,6 @@ async function getData (jwt) {
         text.classList.add("userinfo-item-description");
         item.appendChild(text);
       });
-
-      const userRole = extractRole(jwt)
-      if (userRole == "ROLE_ADMIN") {
-        const mainContainer = document.getElementById("main-container")
-        const getAllUsersButton = document.createElement("button")
-        getAllUsersButton.textContent = "Admin Panel"
-        getAllUsersButton.classList.add("button")
-        mainContainer.appendChild(getAllUsersButton)
-        getAllUsersButton.addEventListener("click", () => {
-            window.location.href = "./adminpanel.html"
-        })
-        
-      }
-}
-
-function extractRole(jwt) {
-    try {
-        const base64Url = jwt.split(".")[1]; // Extrae el payload
-        const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/"); // Convierte a Base64 estándar
-        const jsonString = atob(base64); // Decodifica Base64 a texto plano
-  
-        const payload = JSON.parse(jsonString)
-        return payload.ROLE || null
-      } catch (error) {
-        console.error("Error al extraer el atributo:", error);
-        return null;
-      }
-}
-
-function extractDni(jwt) {
-    try {
-        const base64Url = jwt.split(".")[1]; // Extrae el payload
-        const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/"); // Convierte a Base64 estándar
-        const jsonString = atob(base64); // Decodifica Base64 a texto plano
-  
-        const payload = JSON.parse(jsonString)
-        return payload.sub || null
-    } catch (error) {
-        console.error("Error al extraer el atributo:", error);
-        return null;
-    }
 }
 
 document.getElementById("edit-button").addEventListener("click", () => {
