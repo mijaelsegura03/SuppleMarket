@@ -6,9 +6,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-    <link rel="stylesheet" href="./userpurchases.css">
-    <title>Purchases</title>
+    <link rel="stylesheet" href="./statistics.css">
+    <title>Statistics</title>
 </head>
 <body>
     <nav class="navbar">
@@ -41,16 +42,27 @@
                         </ul>
                     </div>
                 </li>
+
         </ul>
     </nav>
     <main class="main-container">
-        <h1 class="page-title">Your purchases</h1>
-        <div class="purchases-container" id="purchases-container">
-            <div class="accordion" id="purchases-accordion">
+        <div class="statistics">
+            <div class="statistics-container">
+                <canvas id="most-sold-supplements"></canvas>
+            </div>
+            <div class="statistics-container">
+                <canvas id="monthly-sales-amount"></canvas>
+            </div>
+            <div class="statistics-container">
+                <canvas></canvas>
+            </div>
+            <div class="statistics-container">
+                <canvas id="monthly-sales"></canvas>
             </div>
         </div>
     </main>
     <script src="https://kit.fontawesome.com/61c5807aca.js" crossorigin="anonymous"></script>
-    <script src="./userpurchases.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3ZSTk7kajkaj4D292NLuduDCO1c/NT8Id+jE58KYLKT7hXnbtryGmMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./statistics.js" type="module"></script>
 </body>
 </html>

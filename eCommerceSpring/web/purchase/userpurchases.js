@@ -75,9 +75,11 @@ function addAccordionEventListeners() {
     header.addEventListener("click", () => {
       const accordionItem = header.parentElement;
       const accordionContent = accordionItem.querySelector(".accordion-content");
+      header.classList.toggle("active");
 
       accordionContents.forEach((content) => {
         if (content !== accordionContent) {
+          content.parentElement.querySelector(".accordion-header").classList.remove("active");
           content.classList.remove("active");
           content.style.maxHeight = 0;
         }

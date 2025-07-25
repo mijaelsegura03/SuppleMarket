@@ -53,9 +53,15 @@ public class PurchaseService implements IPurchaseService {
         if (purchases.isEmpty()) {
             throw new ResourceNotFoundException("Not found any purchases");
         }
+        List<PurchaseDto> purchasesDto = new ArrayList<>();
+        for (Purchase purchase : purchases) {
+            PurchaseDto purchaseDto = new PurchaseDto(purchase.getId(), purchase.getTotalPrice(), purchase.getPurchaseDate(), purchase.getUser().getDNI());
+            purchaseDto.setPurchaseDetails(purchase.getPurchaseDetails().stream().map(detail -> new PurchaseDetailDto(detail.getId().getPurchaseId(), detail.getId().getSupplementId(), detail.getQuantity())).toList());
+            purchasesDto.add(purchaseDto);
+        }
         res.setMessage("");
         res.setSuccess(true);
-        res.setPurchases(purchases.stream().map(purchase -> new PurchaseDto(purchase.getId(), purchase.getTotalPrice(), purchase.getPurchaseDate(), purchase.getUser().getDNI())).toList());
+        res.setPurchases(purchasesDto);
         res.setTypeError("");
         return res;
     }
