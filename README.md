@@ -18,9 +18,9 @@
 ## NOTES:
 - You must have docker installed in your PC in order to test the app.
 - You must have VS Code to follow the steps above.
-- In the register form I added a checkbox with the option of creating an ADMIN user, for more easiness for testing, so I suggest creating an admin user because from admin panel it will be needed to create supplements that are going to be sold in the catalog.
+- In the register form I added a checkbox with the option of creating an ADMIN user, for more easiness for testing, so I suggest creating an admin user because from admin panel it will be needed to create supplements that are going to be sold in the catalog. Also ADMIN users have a few more features like statistics, admin panel, etc.
 
 ## NOTAS:
 - Debes tener docker instalado en tu PC para poder probar la aplicación.
 - Debes tener VS Code instalado para seguir los pasos de arriba.
-- En la pestaña de registro agregué un checkbox con la opción de crear usuario ADMIN, para mayor facilidad de prueba, recomiendo crear usuario administrador ya que desde el panel de administrador será necesario crear los suplementos a vender en el catálogo.
+- En la pestaña de registro agregué un checkbox con la opción de crear usuario ADMIN, para mayor facilidad de prueba, recomiendo crear usuario administrador ya que desde el panel de administrador será necesario crear los suplementos a vender en el catálogo. Además los usuarios ADMIN tienen algunas características más como estadísticas, panel de administrador, etc.
