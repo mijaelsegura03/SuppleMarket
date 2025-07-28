@@ -31,7 +31,6 @@ async function findCart(jwt) {
     cartItems.forEach(item => {
         cart.push(item)
     })
-    console.log(cart)
     showCart(jwt)
 }
 

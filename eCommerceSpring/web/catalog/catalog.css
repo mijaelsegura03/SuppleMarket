@@ -405,6 +405,7 @@ grid-column-start comienza en 2 y va hasta 4, luego las filas se incrementan 1.
     transition: 0.5s ease;
     padding: 10px;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .cart-saved-dialog-accept:hover {

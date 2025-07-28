@@ -293,7 +293,21 @@ async function renderTopCustomers(topCustomers) {
 	const config = {
 		type: "polarArea",
 		data: chartData,
-		options: {},
+		options: {
+			plugins: {
+				title: {
+					display: true,
+					text: "Top Customers",
+					position: "top",
+					font: {
+						size: 40,
+						weight: "bold",
+						family: "Montserrat, sans-serif",
+					},
+					color: "rgb(0, 0, 0)",
+				},
+			},
+		},
 	};
-	new Chart(chart, config)
+	new Chart(chart, config);
 }

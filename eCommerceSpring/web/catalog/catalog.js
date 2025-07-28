@@ -8,7 +8,7 @@ let cart = []
 const cartList = document.getElementById('cart-list')
 const saveCartButton = document.getElementById('save-cart-button')
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const jwt = sessionStorage.getItem('access_token');
     if (!jwt) {
         window.location.href = '../auth/login/login.html';
@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     renderUserDropdown();
-    const supplements = showSupplements(jwt)
-    findOrCreateCart(jwt, supplements)
+    const supplements = await showSupplements(jwt)
+    await findOrCreateCart(jwt, supplements)
 })
 
 async function getSupplements(jwt) {
@@ -143,9 +143,8 @@ closeCartButton.addEventListener('click', () => {
     cartContainer.classList.toggle('show-cart')
 })
 
-async function findOrCreateCart(jwt, supplementsPromise) {
+async function findOrCreateCart(jwt, supplements) {
     try {
-        const supplements = await supplementsPromise;
         const dni = extractDni(jwt);
         const response = await fetch(`${CART_URL}/${dni}`, {
             method: "GET",
@@ -172,7 +171,8 @@ async function findOrCreateCart(jwt, supplementsPromise) {
             }
             addItemsToCart();
         } else {
-            postCart(dni)
+            await postCart(dni)
+            await findOrCreateCart(jwt, supplements)
         }
     } catch (error) {
         console.error("Error al cargar el carrito:", error);
@@ -298,8 +298,6 @@ function saveCart() {
             quantity: quantity
         }
     })
-    console.log(modifiedCartItems)
-    console.log(cart)
     for (let i = 0; i < cart.length; i++) {
         if (cart[i].quantity !=  modifiedCartItems[i].quantity) {
             const body = {
