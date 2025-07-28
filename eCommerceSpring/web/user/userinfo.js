@@ -117,8 +117,4 @@ async function deleteData(jwt) {
     }
 }
 
-document.getElementById("logout-button").addEventListener("click", () => {
-    sessionStorage.removeItem("access_token")
-    window.location.href = '../home/home.html'
-})
 

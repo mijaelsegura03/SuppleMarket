@@ -82,16 +82,19 @@ function addAccordionEventListeners() {
           content.parentElement.querySelector(".accordion-header").classList.remove("active");
           content.classList.remove("active");
           content.style.maxHeight = 0;
+          content.style.padding = 0
         }
       });
 
       accordionContent.classList.toggle("active");
 
       if (accordionContent.classList.contains("active")) {
-        let addedHeight = accordionContent.querySelector(".list-item").children.length * 10
+        let addedHeight = accordionContent.querySelector(".list-item").children.length * 10 + 20
         accordionContent.style.maxHeight = accordionContent.scrollHeight + addedHeight + "px";
+        accordionContent.style.padding = 10 + "px"
       } else {
         accordionContent.style.maxHeight = 0;
+        accordionContent.style.padding = 0;
       }
     });
   });

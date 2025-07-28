@@ -204,10 +204,9 @@ ul li:hover ul.dropdown {
 }
 
 .accordion-content {
-    display: none;
+    display: flex;
     max-height: 0;
     transition: max-height 0.6s ease;
-    padding: 10px;
     overflow: hidden;
     background-color: white;
     color: #333333;
