@@ -14,20 +14,23 @@ export function renderUserDropdown() {
 	const firstItemIcon = document.createElement("i");
 	firstItemIcon.classList.add("fa-solid", "fa-user");
 	firstItemText.textContent = "Profile";
-	firstItem.firstChild.textContent = "";
-	firstItem.firstChild.appendChild(firstItemIcon);
-	firstItem.firstChild.appendChild(firstItemText);
-	firstItem.firstChild.href = "../user/userinfo.html";
+	const firstItemLink = firstItem.querySelector("a");
+	firstItemLink.innerHTML = "";
+	firstItemLink.appendChild(firstItemIcon);
+	firstItemLink.appendChild(firstItemText);
+	firstItemLink.href = "../user/userinfo.html";
 
 	const secondItem = dropdown.children[1];
 	const secondItemText = document.createElement("p");
 	const secondItemIcon = document.createElement("i");
 	secondItemIcon.classList.add("fa-solid", "fa-cash-register");
 	secondItemText.textContent = "Purchases";
-	secondItem.firstChild.textContent = "";
-	secondItem.firstChild.appendChild(secondItemIcon);
-	secondItem.firstChild.appendChild(secondItemText);
-	secondItem.firstChild.href = "../purchase/userpurchases.html";
+	const secondItemLink = secondItem.querySelector("a");
+	secondItemLink.innerHTML = "";
+	secondItemLink.appendChild(secondItemIcon);
+	secondItemLink.appendChild(secondItemText);
+	secondItemLink.href = "../purchase/userpurchases.html";
+
     
 
 	if (role === "ROLE_ADMIN") {

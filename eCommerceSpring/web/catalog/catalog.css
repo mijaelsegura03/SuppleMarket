@@ -124,6 +124,7 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 .catalog-container {
