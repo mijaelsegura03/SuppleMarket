@@ -325,6 +325,7 @@ async function createMethod(jwt, body, URL) {
     
     if (response.ok) {
         URL == USERS_URL ? getUsers(jwt) : getSupplements(jwt)
+        window.location.href = "http://127.0.0.1:5500/web/user/adminpanel.html"
     } else {
         alert("There was an error creating.")
     }
