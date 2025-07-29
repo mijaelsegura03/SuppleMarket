@@ -24,6 +24,9 @@ async function renderPurchases() {
   });
   const data = await response.json();
   const purchases = data.purchases;
+  purchases.sort((purchaseA, purchaseB) => {
+    return new Date(purchaseB.purchaseDate) - new Date(purchaseA.purchaseDate)
+  })
   let idx = 1
   purchases.forEach((purchase) => {
     const purchaseDetail = purchase.purchaseDetails;

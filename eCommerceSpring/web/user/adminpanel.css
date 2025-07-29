@@ -19,6 +19,8 @@ body  {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+    z-index: 2;
 }
 
 .main-container {

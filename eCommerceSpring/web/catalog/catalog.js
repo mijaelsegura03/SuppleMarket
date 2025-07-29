@@ -116,9 +116,11 @@ function addEvent(supplementId, supplementName, supplementUnitaryPrice, imageDat
             }
             cart.push(item)
             addItemsToCart()
+            cartContainer.classList.add('show-cart')
         } else if (supplementIndexInCart > -1) {
             cart[supplementIndexInCart].quantity = cart[supplementIndexInCart].quantity + parseInt(document.getElementById(`quantity-input-${supplementId}`).value)
             addItemsToCart()
+            cartContainer.classList.add('show-cart')
         }
         if (quantity > 0) {
             const cartId = parseInt(sessionStorage.getItem('cart-id'))
