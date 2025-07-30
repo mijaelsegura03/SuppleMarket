@@ -34,7 +34,7 @@ async function getSupplements(jwt) {
 async function showSupplements(jwt) {
     const supplements = await getSupplements(jwt)
     const cardContainer = document.getElementById("catalog-container")
-    let row = 2
+    let row = 1
     let col = 2
     for (const supplement of supplements) {
         const card = document.createElement('div')

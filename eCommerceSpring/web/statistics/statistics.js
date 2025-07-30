@@ -1,5 +1,5 @@
-import { extractDni } from "../utils/jwt/extractDni.js";
 import { renderUserDropdown } from "../utils/dropdowns/userdropdown.js";
+import { showAlert } from "../utils/alerts/alert.js"
 const USERS_URL = "http://localhost:8080/users";
 const PURCHASES_URL = "http://localhost:8080/purchases";
 const SUPPLEMENTS_URL = "http://localhost:8080/supplements";
@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function renderStatistics() {
 	const purchases = await fetchPurchases();
+	if (purchases == 0) {
+		showAlert("No purchases were made yet in order to show statistics", "warning")
+		return
+	}
 	const fiveMostSoldSupplements = getMostSoldSupplements(purchases);
 	const fiveTopCustomers = getTopCustomers(purchases);
 	renderMostSoldSupplements(fiveMostSoldSupplements);
@@ -26,6 +30,9 @@ async function fetchPurchases() {
 			Authorization: `Bearer ${jwt}`,
 		},
 	});
+	if (response.status == 404) {
+		return 0
+	}
 	const data = await response.json();
 	return data.purchases;
 }
