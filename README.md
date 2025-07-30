@@ -1,7 +1,7 @@
 # SuppleMarket
 **In order to test the app, all you have to do is:**
 1. Clone the repo
-2. Open it with VS Code
+2. Open eCommerceSpring folder with VS Code (if you do not open this folder docker compose will not work)
 3. Open the terminal (CTRL + Ñ)
 4. Write this command --> docker compose up --build
 5. Press enter
@@ -9,7 +9,7 @@
 
 **Para testear la aplicación, todo lo que tienes que hacer es:**
 1. Clonar el repo
-2. Abrirlo con VS Code
+2. Abrir la carpeta eCommerceSpring con VS Code (si no abres esta carpeta el docker compose no funcionará)
 3. Abrir la terminal (CTRL + Ñ)
 4. Escribir este comando --> docker compose up --build
 5. Presionar enter
