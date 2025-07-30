@@ -29,12 +29,5 @@ async function login(body) {
     const data = await response.json()
     const token = data.access_token
     sessionStorage.setItem("access_token", token);
-    console.log(document.referrer)
-    let prevUrl = document.referrer
-    let prevUrlHtml = prevUrl.split("/").pop()
-    if (prevUrlHtml === "login.html" || prevUrlHtml === "register.html") {
-        document.location.href = "../../home/home.html";
-    } else {
-        history.back()
-    }
+    document.location.href = "../../home/home.html";
 }
